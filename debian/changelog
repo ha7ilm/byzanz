@@ -1,3 +1,38 @@
+byzanz (0.3.0+git20120930-1) experimental; urgency=low
+
+  * New Maintainer. (Closes: #654614)
+  * New Upstream git snapshot which adds various translations.
+  * Switch to packaging format 3.0 (quilt).
+  * Create patches instead of modifying the sources.
+    - Remove config.sub and config.guess and add them automatically with
+      autotools-dev.
+    - Incorporate the last NMUs and create proper patches for them.
+    - Add patches from Jari Aalto again which were overwritten by the last NMUs.
+    - Point out in byzanz-record manpage that byzanz supports webm.
+  * debian/rules:
+    - Simplify debian/rules by using dh.
+    - Build with hardening+=all.
+    - Build with -Wl, --as-needed to avoid unnecessary dependencies.
+  * debian/control:
+    - Add autotools-dev to Build-Depends.
+    - Homepage field: Point to the git repository because the old homepage does
+      not exist anymore.
+    - Remove the VCS-field because it points to the upstream repository.
+      (Closes: #685358)
+    - Description: Make clear that Byzanz is an applet and command line tool.
+    - New Standards-Version 3.9.4.
+  * Bump compat level to 9.
+  * Add a short introductory manpage for Byzanz which points to byzanz-record
+    and byzanz-playback. (Closes: #606673)
+  * Improve README.Debian and make clear where you can find the panel applet.
+    Create examples in case you can only use the command line tools.
+    (Closes: #606676)
+  * Fix the wrong command name in byzanz-playback's synopsis. (Closes: #641663)
+  * Update debian/copyright to copyright format 1.0.
+  * Update the license to GPL-3+, LGPL-3+ and Public Domain where necessary.
+  
+ -- Markus Koschany <apo@gambaru.de>  Sun, 02 Oct 2012 18:09:11 +0200
+
 byzanz (0.2.2+git22.10.2011-1.3) unstable; urgency=low
 
   * Non-maintainer upload.

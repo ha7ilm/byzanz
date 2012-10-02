@@ -21,7 +21,7 @@ AC_SUBST(ACLOCAL_AMFLAGS, "-I macros")
 AC_PROG_INTLTOOL
 
 dnl the gettext stuff needed
-ALL_LINGUAS="ar ca cs da de dz el en_GB es fi fr gl hu id it ja nb oc pl pt_BR ro ru sl sv tr vi uk zh_CN"
+ALL_LINGUAS="ar ca cs da de dz el en_GB es fi fr gl hu id it ja lv nb oc pl pt_BR ro ru sl sv tr vi uk zh_CN"
 GETTEXT_PACKAGE=$PACKAGE
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], "$GETTEXT_PACKAGE",
@@ -36,7 +36,7 @@ dnl For interactive UNIX (a Sun thing)
 AC_ISC_POSIX
 
 dnl decide on error flags
-AS_COMPILER_FLAGS(ERROR_CFLAGS, "-Wall -Wextra -Wno-missing-field-initializers -Wno-unused-parameter -Wold-style-definition -Wdeclaration-after-statement -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wmissing-noreturn -Wshadow -Wpointer-arith -Wwrite-strings -Winline -Wformat-nonliteral -Wformat-security -Wswitch-enum -Wswitch-default -Winit-self -Wmissing-include-dirs -Wundef -Waggregate-return -Wmissing-format-attribute -Wnested-externs -Wunsafe-loop-optimizations -Wpacked -Winvalid-pch -Wsync-nand")
+AS_COMPILER_FLAGS(ERROR_CFLAGS, "-Wall -Wextra -Wno-missing-field-initializers -Wno-unused-parameter -Wold-style-definition -Wdeclaration-after-statement -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wmissing-noreturn -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Winline -Wformat-nonliteral -Wformat-security -Wswitch-enum -Wswitch-default -Winit-self -Wmissing-include-dirs -Wundef -Waggregate-return -Wmissing-format-attribute -Wnested-externs -Wunsafe-loop-optimizations -Wpacked -Winvalid-pch -Wsync-nand")
 if test "x$BYZANZ_CVS" = "xyes"
 then
   AS_COMPILER_FLAGS(ERROR_CFLAGS, "-Werror")

@@ -1,0 +1,14 @@
+byzanz for Debian
+-----------------
+
+The upstream sources are maintained in a git repository.
+
+http://git.gnome.org/browse/byzanz/
+
+Unfortunately it is not possible to track new upstream releases with a watch file. 
+
+This version has been cloned on 09/30/2012 also known as
+
+http://git.gnome.org/browse/byzanz/commit/?id=f37f644f1f53c6c0b503c8cd682e2e5af5e132d2
+
+Markus Koschany <apo@gambaru.de> 2012-10-02

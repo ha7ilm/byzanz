@@ -1,0 +1,2 @@
+# Unfortunately upstream doesn't provide tarballs or other mechanisms to 
+# detect a new release with uscan. Thus this watch file is empty.
