@@ -15,10 +15,10 @@ byzanz (0.3.0+git20120930-1) experimental; urgency=low
     - Build with -Wl, --as-needed to avoid unnecessary dependencies.
   * debian/control:
     - Add autotools-dev to Build-Depends.
-    - Homepage field: Point to the git repository because the old homepage does
-      not exist anymore.
-    - Remove the VCS-field because it points to the upstream repository.
-      (Closes: #685358)
+    - Homepage field: Point to upstream's git repository because the old
+      homepage does not exist anymore.
+    - Byzanz will be maintained in a Debian git repo from now on. Add
+      corresponding Vcs-fields. (Closes: #685358)
     - Description: Make clear that Byzanz is an applet and command line tool.
     - New Standards-Version 3.9.4.
   * Bump compat level to 9.
