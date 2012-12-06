@@ -11,7 +11,7 @@ byzanz (0.3.0+git20120930-1) experimental; urgency=low
     - Point out in byzanz-record manpage that byzanz supports webm.
   * debian/rules:
     - Simplify debian/rules by using dh.
-    - Build with hardening+=all.
+    - Build with parallel and hardening+=all.
     - Build with -Wl, --as-needed to avoid unnecessary dependencies.
   * debian/control:
     - Add autotools-dev to Build-Depends.
