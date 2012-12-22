@@ -1,4 +1,4 @@
-byzanz (0.3.0+git20120930-1) experimental; urgency=low
+byzanz (0.3.0+git20120930-1) unstable; urgency=low
 
   * New Maintainer. (Closes: #654614)
   * New Upstream git snapshot which adds various translations.
@@ -7,7 +7,8 @@ byzanz (0.3.0+git20120930-1) experimental; urgency=low
     - Remove config.sub and config.guess and add them automatically with
       autotools-dev.
     - Incorporate the last NMUs and create proper patches for them.
-    - Add patches from Jari Aalto again which were overwritten by the last NMUs.
+    - Add patches from Jari Aalto again which were overwritten by the last
+      NMUs.
     - Point out in byzanz-record manpage that byzanz supports webm.
   * debian/rules:
     - Simplify debian/rules by using dh.
@@ -30,6 +31,7 @@ byzanz (0.3.0+git20120930-1) experimental; urgency=low
   * Fix the wrong command name in byzanz-playback's synopsis. (Closes: #641663)
   * Update debian/copyright to copyright format 1.0.
   * Update the license to GPL-3+, LGPL-3+ and Public Domain where necessary.
+  * Add watch file again.
   
  -- Markus Koschany <apo@gambaru.de>  Sun, 02 Oct 2012 18:09:11 +0200
 
