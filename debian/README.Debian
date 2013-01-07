@@ -37,4 +37,4 @@ EXAMPLES
 
 	byzanz-record -a -c -d 30 -x 840 -y 0 -w 840 -h 525 mydesktop.ogv
 
- -- Markus Koschany <apo@gambaru.de>, 2012-10-02
+ -- Markus Koschany <apo@gambaru.de>  Tue, 08 Jan 2013 00:30:21 +0100
