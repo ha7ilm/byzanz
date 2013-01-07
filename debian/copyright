@@ -15,10 +15,12 @@ License: GPL-3+
 Files: src/*
 Copyright: 2005-2012 Benjamin Otte <otte@gnome.org>
            2006 Josh Triplett <josh@freedesktop.org>
+	   and contributors
 License: LGPL-3+
 
 Files: gifenc/*
 Copyright: 2005-2012 Benjamin Otte <otte@gnome.org>
+           and contributors
 License: LGPL-3+
 
 Files: src/Makefile.am
@@ -32,6 +34,7 @@ Files: src/Makefile.am
        src/byzanzapplet.xml
        src/byzanzmarshal.list
 Copyright: 2005-2012 Benjamin Otte <otte@gnome.org>
+           and contributors
 License: GPL-3+
 
 Files: po/de.po
