@@ -31,7 +31,6 @@ byzanz (0.3.0+git20120930-1) unstable; urgency=low
   * Fix the wrong command name in byzanz-playback's synopsis. (Closes: #641663)
   * Update debian/copyright to copyright format 1.0.
   * Update the license to GPL-3+, LGPL-3+ and Public Domain where necessary.
-  * Add watch file again.
   
  -- Markus Koschany <apo@gambaru.de>  Sun, 02 Oct 2012 18:09:11 +0200
 
