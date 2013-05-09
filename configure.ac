@@ -21,7 +21,7 @@ AC_SUBST(ACLOCAL_AMFLAGS, "-I macros")
 AC_PROG_INTLTOOL
 
 dnl the gettext stuff needed
-ALL_LINGUAS="ar ca cs da de dz el en_GB es fi fr gl hu id it ja lv nb oc pl pt_BR ro ru sl sv tr vi uk zh_CN"
+ALL_LINGUAS="ar ca cs da de dz el en_GB es fi fr gl hu id it ja lv nb oc pl pt_BR ro ru sl sr sr@latin sv tr vi uk zh_CN"
 GETTEXT_PACKAGE=$PACKAGE
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], "$GETTEXT_PACKAGE",
@@ -63,28 +63,27 @@ AC_DEFINE_DIR(DATADIR, "${datadir}", [datadir])
 dnl Check for essential libraries first:
 dnl ====================================
 
+GLIB_GSETTINGS
+
 CAIRO_REQ="1.10"
 GTK_REQ="3.0.0"
 APPLET_REQ="2.91.91"
 XDAMAGE_REQ="1.0"
-GST_REQ="0.10.24"
-GIO_REQ="2.31"
+GIO_REQ="2.35"
 
 PKG_CHECK_MODULES(GTK, cairo >= $CAIRO_REQ gtk+-3.0 >= $GTK_REQ x11 gio-2.0 >= $GIO_REQ)
 
 PKG_CHECK_MODULES(XDAMAGE, xdamage >= $XDAMAGE_REQ)
 
 LIBPANEL_APPLET="libpanelapplet-4.0"
-PKG_CHECK_MODULES(APPLET, $LIBPANEL_APPLET >= $APPLET_REQ)
-appletdir=`$PKG_CONFIG --variable=libpanel_applet_dir $LIBPANEL_APPLET`
-AC_SUBST(appletdir)
+PKG_CHECK_MODULES(APPLET, $LIBPANEL_APPLET >= $APPLET_REQ,
+                  have_applet=yes, have_applet=no)
+AM_CONDITIONAL(HAVE_APPLET, [test x$have_applet = xyes])
+AS_IF([test x$have_applet = xyes],
+      [appletdir=`$PKG_CONFIG --variable=libpanel_applet_dir $LIBPANEL_APPLET`
+       AC_SUBST(appletdir)],[])
 
-PKG_CHECK_MODULES(GST, gstreamer-app-0.10 >= $GST_REQ gstreamer-0.10 >= $GST_REQ)
-
-AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
-AC_PATH_PROG(GCONFTOOL, gconftool-2)
-
-AM_GCONF_SOURCE_2
+PKG_CHECK_MODULES(GST, gstreamer-app-1.0 gstreamer-1.0)
 
 GIFENC_CFLAGS="$GTK_CFLAGS $ERROR_CFLAGS"
 GIFENC_LIBS="$GTK_LIBS"

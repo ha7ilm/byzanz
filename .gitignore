@@ -41,10 +41,11 @@ po/POTFILES
 po/stamp-it
 src/ByzanzApplet.server
 src/ByzanzApplet.server.in
+src/org.gnome.ByzanzApplet.panel-applet
+src/org.gnome.ByzanzApplet.panel-applet.in
+src/org.gnome.panel.applet.ByzanzAppletFactory.service
 src/byzanz-applet
 src/byzanz-playback
 src/byzanz-record
 src/byzanz.schemas
-src/byzanzmarshal.c
-src/byzanzmarshal.h
 
