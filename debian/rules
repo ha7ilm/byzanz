@@ -1,5 +1,8 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE=1
+DPATH := $(abspath $(dir $(MAKEFILE_LIST)))
+PKG := byzanz
+VER ?= $(shell dpkg-parsechangelog -l$(DPATH)/changelog | perl -ne 'print $$1 if m{Version:\s*(\d[\d\.]*(?:\+(?:git)?\d+))}')
 
 export DH_OPTIONS
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
@@ -17,3 +20,19 @@ override_dh_auto_configure:
 		--infodir=\$${prefix}/share/info \
 		--sysconfdir=/etc \
 		--libexecdir=/usr/lib/byzanz
+
+.PHONY: get-orig-source
+get-orig-source: $(PKG)_$(VER).orig.tar.xz
+	@
+
+$(PKG)_$(VER).orig.tar.xz:
+	@echo "# Cloning upstream git repository..."
+	git clone git://git.gnome.org/byzanz $(PKG)-$(VER)
+	@echo "# Clean-up..."
+	cd $(PKG)-$(VER) \
+	&& git checkout -b debiansource 5a6c336982e5956c6dce5d3d51d057ac034ce7ca \
+	&& $(RM) -r -v \
+		.git/
+	@echo "# Packing..."
+	tar caf "$(PKG)_$(VER).orig.tar.xz" "$(PKG)-$(VER)" \
+	&& $(RM) -r "$(PKG)-$(VER)"
