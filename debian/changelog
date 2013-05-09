@@ -1,21 +1,23 @@
 byzanz (0.3.0+git20130319-1) unstable; urgency=low
 
   * [3f68333] Imported Upstream version 0.3.0+git20130319
-    Fixes FTBFS because of gnu_printf format attribute error.
-    (Closes: #707380). Thanks to Lucas Nussbaum for the report.
+    - Fixes FTBFS because of gnu_printf format attribute error.
+      (Closes: #707380). Thanks to Lucas Nussbaum for the report.
   * [2b2bc18] Update to use the current canonical Vcs-URI.
   * [44eb766] Update README.source.
-    Simplify README.source and point to the new get-orig-source target.
+    - Simplify README.source and point to the new get-orig-source target.
   * [3373f39] Add get-orig-source target.
   * [a606689] Delete byzanz.1. It is shipped by upstream now.
   * [d866d2f] Drop all patches. They are merged upstream.
   * [b43867f] Update copyright years.
   * [6b9be1d] Switch to gstreamer-1.0.
-    Replace Build-Depends on libgstreamer-0.10 with libgstreamer-1.0.
-  * [04c7563] Remove manpages file. The man page is installed by
-    upstream.
+    - Replace Build-Depends on libgstreamer-0.10 with libgstreamer-1.0.
+  * [04c7563] Remove manpages file. The man page is installed by upstream.
+  * [2184c36] Drop libgconf2-dev from Build-Depends.
+    - Byzanz has been ported from GConf to GSettings thus the build dependency
+      on libgconf2-dev is no longer necessary.
 
- -- Markus Koschany <apo@gambaru.de>  Thu, 09 May 2013 17:55:31 +0200
+ -- Markus Koschany <apo@gambaru.de>  Thu, 09 May 2013 20:03:36 +0200
 
 byzanz (0.3.0+git20120930-1) unstable; urgency=low
 
