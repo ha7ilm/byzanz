@@ -1,11 +1,7 @@
+
 noinst_LTLIBRARIES = libbyzanz.la
 bin_PROGRAMS = byzanz-record byzanz-playback
-libexec_PROGRAMS = byzanz-applet
-man_MANS = byzanz-record.1 byzanz-playback.1
-
-BUILT_SOURCES = \
-	byzanzmarshal.h \
-	byzanzmarshal.c
+man_MANS = byzanz.1 byzanz-record.1 byzanz-playback.1
 
 noinst_HEADERS = \
 	byzanzencoder.h \
@@ -39,7 +35,6 @@ libbyzanz_la_SOURCES = \
 	byzanzlayer.c \
 	byzanzlayercursor.c \
 	byzanzlayerwindow.c \
-	byzanzmarshal.c \
 	byzanzqueue.c \
 	byzanzqueueinputstream.c \
 	byzanzqueueoutputstream.c \
@@ -50,7 +45,7 @@ libbyzanz_la_SOURCES = \
 
 libbyzanz_la_CFLAGS = $(BYZANZ_CFLAGS) -I$(top_srcdir)/gifenc
 libbyzanz_la_LIBADD = $(BYZANZ_LIBS) $(top_builddir)/gifenc/libgifenc.la
-		 
+
 byzanz_playback_SOURCES = \
 	playback.c
 
@@ -64,6 +59,8 @@ byzanz_record_SOURCES = \
 byzanz_record_CFLAGS = $(BYZANZ_CFLAGS)
 byzanz_record_LDADD = $(BYZANZ_LIBS) ./libbyzanz.la
 
+if HAVE_APPLET
+libexec_PROGRAMS = byzanz-applet
 
 byzanz_applet_SOURCES = \
 	byzanzapplet.c \
@@ -73,25 +70,17 @@ byzanz_applet_SOURCES = \
 byzanz_applet_CFLAGS = -DBYZANZ_MENU_UI_DIR=\""$(uidir)"\" $(APPLET_CFLAGS)
 byzanz_applet_LDADD = $(APPLET_LIBS) ./libbyzanz.la
 
+gsettings_schemas_in_in = org.gnome.byzanz.applet.gschema.xml.in.in
 
-byzanzmarshal.h: byzanzmarshal.list
-	$(GLIB_GENMARSHAL) --prefix=byzanz_marshal $(srcdir)/byzanzmarshal.list --header > byzanzmarshal.h
+@INTLTOOL_XML_NOMERGE_RULE@
 
-byzanzmarshal.c: byzanzmarshal.list
-	(echo "#include \"byzanzmarshal.h\""; \
-	 $(GLIB_GENMARSHAL) --prefix=byzanz_marshal $(srcdir)/byzanzmarshal.list --body) > byzanzmarshal.c
+gsettings_schemas_in = $(gsettings_schemas_in_in:.xml.in.in=.xml.in)
+gsettings_SCHEMAS = $(gsettings_schemas_in:.xml.in=.xml)
 
+%.gschema.xml.in: %.gschema.xml.in.in Makefile
+	$(AM_V_GEN) $(SED) -e 's^\@datadir\@^$(datadir)^g' -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
-schemasdir   = @GCONF_SCHEMA_FILE_DIR@
-schemas_in_files = byzanz.schemas.in
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
-
-@INTLTOOL_SCHEMAS_RULE@
-
-if GCONF_SCHEMAS_INSTALL
-install-data-local:
-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(schemas_DATA) ;
-endif
+@GSETTINGS_RULES@
 
 applet_in_files = org.gnome.ByzanzApplet.panel-applet.in
 applet_DATA     = $(applet_in_files:.panel-applet.in=.panel-applet)
@@ -104,25 +93,21 @@ $(applet_in_files): $(applet_in_files).in Makefile
 
 %.panel-applet: %.panel-applet.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
 
-servicedir       = $(datadir)/dbus-1/services
-service_in_files = org.gnome.panel.applet.ByzanzAppletFactory.service.in
-service_DATA     = $(service_in_files:.service.in=.service)
-
-org.gnome.panel.applet.ByzanzAppletFactory.service: $(service_in_files)
-	sed \
-	    -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
-	    $< > $@
-
 uidir = $(datadir)/byzanz
 ui_DATA = byzanzapplet.xml
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(schemas_DATA) $(BUILT_SOURCES)
+CLEANFILES = \
+	$(applet_DATA) \
+	$(applet_DATA).in \
+	$(service_DATA) \
+	$(schemas_DATA) \
+	$(gsettings_SCHEMAS_in) \
+	$(gsettings_SCHEMAS) \
+	*.gschema.valid
 
 EXTRA_DIST = \
-	byzanzmarshal.list \
 	org.gnome.ByzanzApplet.panel-applet.in.in \
+	$(gsettings_schemas_in_in)	\
 	$(man_MANS) \
-	$(ui_DATA) \
-	$(schemas_in_files)
-
-
+	$(ui_DATA)
+endif
