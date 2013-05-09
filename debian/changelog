@@ -1,4 +1,4 @@
-byzanz (0.3.0+git20120930-2) UNRELEASED; urgency=low
+byzanz (0.3.0+git20130319-1) unstable; urgency=low
 
   * debian/control:
     - Use the current canonical Vcs-URI.
