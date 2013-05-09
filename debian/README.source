@@ -14,6 +14,6 @@ upstream discontinued the release of new tarballs. Therefore it is not possible
 to track new upstream releases with a watch file hence it does not exist.
 
 All sources have been cloned from upstream's git repsitory where the latest
-release has been tagged 0.3.0. 
+release has been tagged 0.3.0.
 
  -- Markus Koschany <apo@gambaru.de>  Mon, 07 Jan 2013 18:30:11 +0100
