@@ -1,3 +1,12 @@
+byzanz (0.3.0+git20130319-2) unstable; urgency=low
+
+  * [62dad8f] Add Fix-FTBFS-because-of-Wcast-align-error-flag.patch
+    - Byzanz still fails to build from source on armel, armhf, mips,
+      mipsel and ia64. This is a temporary solution until a real fix can be
+      implemented.
+
+ -- Markus Koschany <apo@gambaru.de>  Fri, 10 May 2013 00:10:46 +0200
+
 byzanz (0.3.0+git20130319-1) unstable; urgency=low
 
   * [3f68333] Imported Upstream version 0.3.0+git20130319
