@@ -4,7 +4,6 @@ DPATH := $(abspath $(dir $(MAKEFILE_LIST)))
 PKG := byzanz
 VER ?= $(shell dpkg-parsechangelog -l$(DPATH)/changelog | perl -ne 'print $$1 if m{Version:\s*(\d[\d\.]*(?:\+(?:git)?\d+))}')
 
-export DH_OPTIONS
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
