@@ -1,3 +1,9 @@
+byzanz (0.3.0+git20140115-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+
+ -- Markus Koschany <apo@gambaru.de>  Tue, 21 Jan 2014 23:22:21 +0100
+
 byzanz (0.3.0+git20130319-2) unstable; urgency=low
 
   * [62dad8f] Add Fix-FTBFS-because-of-Wcast-align-error-flag.patch
