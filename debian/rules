@@ -1,9 +1,9 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE=1
-DPATH := $(abspath $(dir $(MAKEFILE_LIST)))
-PKG := byzanz
-VER ?= $(shell dpkg-parsechangelog -l$(DPATH)/changelog | perl -ne 'print $$1 if m{Version:\s*(\d[\d\.]*(?:\+(?:git)?\d+))}')
-UURL := git://git.gnome.org/byzanz
+DPATH  := $(abspath $(dir $(MAKEFILE_LIST)))
+VER    ?= $(shell dpkg-parsechangelog -l$(DPATH)/changelog | perl -ne 'print $$1 if m{Version:\s*(\d[\d\.]*(?:\+(?:git)?\d+))}')
+PKG    := byzanz
+UURL   := git://git.gnome.org/byzanz
 COMMIT := d37cb943fab7cf82e122ec0e1254c9b9adda8b59
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
