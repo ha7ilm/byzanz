@@ -3,6 +3,8 @@
 DPATH := $(abspath $(dir $(MAKEFILE_LIST)))
 PKG := byzanz
 VER ?= $(shell dpkg-parsechangelog -l$(DPATH)/changelog | perl -ne 'print $$1 if m{Version:\s*(\d[\d\.]*(?:\+(?:git)?\d+))}')
+UURL := git://git.gnome.org/byzanz
+COMMIT := d37cb943fab7cf82e122ec0e1254c9b9adda8b59
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
@@ -26,10 +28,13 @@ get-orig-source: $(PKG)_$(VER).orig.tar.xz
 
 $(PKG)_$(VER).orig.tar.xz:
 	@echo "# Cloning upstream git repository..."
-	git clone git://git.gnome.org/byzanz $(PKG)-$(VER)
+	git clone $(UURL) $(PKG)-$(VER)
 	@echo "# Clean-up..."
 	cd $(PKG)-$(VER) \
-	&& git checkout -b debiansource d37cb943fab7cf82e122ec0e1254c9b9adda8b59 \
+	&& git checkout -b debiansource $(COMMIT) \
+	&& echo "# Setting times..." \
+	&& for F in $$(git ls-tree -r --name-only HEAD); \
+	do touch --no-dereference -d "$$(git log -1 --format="%ai" -- $$F)" "$$F"; done \
 	&& $(RM) -r -v \
 		.git/
 	@echo "# Packing..."
