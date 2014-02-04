@@ -19,7 +19,9 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/byzanz.git
 
 Package: byzanz
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
 Description: small screencast creator
  Byzanz is an applet and command line tool allowing you to record your current
  desktop or parts of it to an animated GIF, Ogg Theora, Flash or WebM. This is
