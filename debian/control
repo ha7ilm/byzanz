@@ -23,8 +23,8 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends}
 Description: small screencast creator
- Byzanz is an applet and command line tool allowing you to record your current
- desktop or parts of it to an animated GIF, Ogg Theora, Flash or WebM. This is
- especially useful for publishing on the web.
+ Byzanz is a desktop recorder and command line tool allowing you to record your
+ current desktop or parts of it to an animated GIF, Ogg Theora, Flash or WebM.
+ This is especially useful for publishing on the web.
  .
  Byzanz also allows recording of audio, when the output format supports it.
