@@ -5,7 +5,7 @@ Subject: Fix FTBFS because of Wcast-align-error-flag
 Byzanz still FTBFS on sparc, armel, armhf, mips, mipsel and ia64 and
 this patch is still necessary to prevent this.
 ---
- configure.ac |    2 +-
+ configure.ac | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/configure.ac b/configure.ac
