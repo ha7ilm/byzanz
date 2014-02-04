@@ -23,6 +23,7 @@ override_dh_auto_configure:
 		--libexecdir=/usr/lib/byzanz
 
 .PHONY: get-orig-source
+## http://wiki.debian.org/onlyjob/get-orig-source
 get-orig-source: $(PKG)_$(VER).orig.tar.xz
 	@
 
@@ -38,5 +39,6 @@ $(PKG)_$(VER).orig.tar.xz:
 	&& $(RM) -r -v \
 		.git/
 	@echo "# Packing..."
-	tar caf "$(PKG)_$(VER).orig.tar.xz" "$(PKG)-$(VER)" \
+	find -L "$(PKG)-$(VER)" -xdev -type f -print | sort \
+	| XZ_OPT="-6v" tar -caf "$(PKG)_$(VER).orig.tar.xz" -T- --owner=root --group=root --mode=a+rX \
 	&& $(RM) -r "$(PKG)-$(VER)"
