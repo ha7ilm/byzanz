@@ -3,27 +3,25 @@ Date: Tue, 4 Feb 2014 03:06:45 +0100
 Subject: audio
 
 ---
- src/byzanzencoderflv.c | 8 ++++----
+ src/byzanzencoderflv.c | 6 +++---
  src/byzanzencoderogv.c | 6 +++---
- 2 files changed, 7 insertions(+), 7 deletions(-)
+ 2 files changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/src/byzanzencoderflv.c b/src/byzanzencoderflv.c
-index 3aaa9a5..f6453e5 100644
+index 3aaa9a5..1a531d8 100644
 --- a/src/byzanzencoderflv.c
 +++ b/src/byzanzencoderflv.c
-@@ -37,11 +37,11 @@ byzanz_encoder_flv_class_init (ByzanzEncoderFlvClass *klass)
-   gtk_file_filter_add_mime_type (encoder_class->filter, "video/x-flv");
+@@ -38,10 +38,10 @@ byzanz_encoder_flv_class_init (ByzanzEncoderFlvClass *klass)
    gtk_file_filter_add_pattern (encoder_class->filter, "*.flv");
  
--  gstreamer_class->pipeline_string = 
-+  gstreamer_class->pipeline_string =
-     "appsrc name=src ! videoconvert ! avenc_flashsv buffer-size=8388608 ! flvmux ! giostreamsink name=sink";
--  gstreamer_class->audio_pipeline_string = 
+   gstreamer_class->pipeline_string = 
+-    "appsrc name=src ! videoconvert ! avenc_flashsv buffer-size=8388608 ! flvmux ! giostreamsink name=sink";
++    "appsrc name=src ! videoconvert ! avenc_flashsv ! flvmux ! giostreamsink name=sink";
+   gstreamer_class->audio_pipeline_string = 
 -    "autoaudiosrc name=audiosrc ! audioconvert ! audio/x-raw-int,width=16 ! queue ! flvmux name=muxer ! giostreamsink name=sink "
 -    "appsrc name=src ! videoconvert ! avenc_flashsv buffer-size=8388608 ! muxer.";
-+  gstreamer_class->audio_pipeline_string =
 +    "autoaudiosrc name=audiosrc ! audioconvert ! audio/x-raw ! queue ! flvmux name=muxer ! giostreamsink name=sink "
-+    "appsrc name=src ! videoconvert ! avenc_flashsv  buffer-size=8388608 ! muxer.";
++    "appsrc name=src ! videoconvert ! avenc_flashsv ! muxer.";
  }
  
  static void
