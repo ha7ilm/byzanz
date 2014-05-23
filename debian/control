@@ -20,6 +20,9 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/byzanz.git
 Package: byzanz
 Architecture: any
 Depends:
+ gstreamer1.0-libav,
+ gstreamer1.0-plugins-base,
+ gstreamer1.0-plugins-good,
  ${misc:Depends},
  ${shlibs:Depends}
 Description: small screencast creator
