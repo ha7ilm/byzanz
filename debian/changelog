@@ -5,6 +5,8 @@ byzanz (0.3.0+git20140223-1) unstable; urgency=medium
     gstreamer1.0-libav.
     In order to record flash or webm videos these packages are mandatory.
     Thanks to Thorsten Glaser for the report (Closes: #748848)
+  * Use dh-autoreconf instead of autotools-dev.
+  * Ensure that byzanz can be built twice in a row. Add clean file.
 
  -- Markus Koschany <apo@gambaru.de>  Sun, 25 May 2014 08:48:20 +0200
 
