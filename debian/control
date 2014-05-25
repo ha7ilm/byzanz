@@ -3,7 +3,7 @@ Section: graphics
 Priority: optional
 Maintainer: Markus Koschany <apo@gambaru.de>
 Build-Depends:
- autotools-dev,
+ dh-autoreconf,
  debhelper (>= 9),
  gnome-common,
  libcairo2-dev,
