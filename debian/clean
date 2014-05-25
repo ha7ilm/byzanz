@@ -1,0 +1,7 @@
+intltool-extract.in
+intltool-merge.in
+intltool-update.in
+macros/intltool.m4
+omf.make
+po/Makefile.in.in
+xmldocs.make
