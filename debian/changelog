@@ -1,3 +1,10 @@
+byzanz (0.3.0+git20140619-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.3.0+git20140619.
+  * Fix lintian warning space-in-std-shortname-in-dep5-copyright.
+
+ -- Markus Koschany <apo@gambaru.de>  Mon, 29 Sep 2014 16:21:24 +0200
+
 byzanz (0.3.0+git20140223-1) unstable; urgency=medium
 
   * Imported Upstream version 0.3.0+git20140223.
