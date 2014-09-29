@@ -12,7 +12,7 @@ Build-Depends:
  libgstreamer1.0-dev,
  libgtk-3-dev,
  libx11-dev
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Homepage: http://git.gnome.org/browse/byzanz/
 Vcs-Git: git://anonscm.debian.org/collab-maint/byzanz.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/byzanz.git
