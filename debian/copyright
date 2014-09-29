@@ -3,23 +3,23 @@ Upstream-Name: byzanz
 Source: http://git.gnome.org/browse/byzanz/
 
 Files: *
-Copyright: 2005-2013 Benjamin Otte <otte@gnome.org>
+Copyright: 2005-2014, Benjamin Otte <otte@gnome.org>
            and contributors.
 License: GPL-3+
 
 Files: debian/*
-Copyright: 2006-2010 Bastian Venthur <venthur@debian.org>
-           2012-2014 Markus Koschany <apo@gambaru.de>
+Copyright: 2006-2010, Bastian Venthur <venthur@debian.org>
+           2012-2014, Markus Koschany <apo@gambaru.de>
 License: GPL-3+
 
 Files: src/*
-Copyright: 2005-2013 Benjamin Otte <otte@gnome.org>
-           2006 Josh Triplett <josh@freedesktop.org>
+Copyright: 2005-2013, Benjamin Otte <otte@gnome.org>
+           2006,      Josh Triplett <josh@freedesktop.org>
            and contributors
 License: LGPL-3+
 
 Files: gifenc/*
-Copyright: 2005-2013 Benjamin Otte <otte@gnome.org>
+Copyright: 2005-2013, Benjamin Otte <otte@gnome.org>
            and contributors
 License: LGPL-3+
 
@@ -30,20 +30,20 @@ Files: src/Makefile.am
        src/paneltogglebutton.h
        src/screenshot-utils.c
        src/screenshot-utils.h
-       src/byzanz.schemas.in
        src/byzanzapplet.xml
        src/byzanzmarshal.list
-Copyright: 2005-2013 Benjamin Otte <otte@gnome.org>
+Copyright: 2005-2013, Benjamin Otte <otte@gnome.org>
            and contributors
 License: GPL-3+
 
 Files: po/de.po
        po/tr.po
-Copyright: 2006 Benjamin Otte <otte@gnome.org>
+Copyright: 2006,     Benjamin Otte <otte@gnome.org>
            2009,2010 Mario Blättermann <mariobl@gnome.org>
-           2006 Bülent ŞENER <bsener@inonu.edu.tr>
+           2006,     Bülent ŞENER <bsener@inonu.edu.tr>
+           2014,     Muhammet Kara <muhammetk@gmail.com>
 License: public-domain
- These files are not affected by any copyright.
+ These files were granted to the Public Domain.
 
 
 License: GPL-3+
