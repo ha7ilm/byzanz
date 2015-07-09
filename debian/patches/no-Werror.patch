@@ -2,6 +2,8 @@ From: Markus Koschany <apo@gambaru.de>
 Date: Thu, 9 Jul 2015 16:30:44 +0200
 Subject: no Werror
 
+Bug: https://bugs.debian.org/791910
+Forwarded: no, since this should be automatically done when a new version of byzanz is released
 ---
  configure.ac | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
