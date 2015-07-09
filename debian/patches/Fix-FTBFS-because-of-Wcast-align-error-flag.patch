@@ -9,7 +9,7 @@ this patch is still necessary to prevent this.
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/configure.ac b/configure.ac
-index b6ec172..4084157 100644
+index 620bb26..2384482 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -36,7 +36,7 @@ dnl For interactive UNIX (a Sun thing)
