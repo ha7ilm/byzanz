@@ -5,6 +5,7 @@ byzanz (0.3.0+git20150701-1) unstable; urgency=medium
     This prevents that byzanz fails to build from source due to deprecation
     warnings which are currently not fatal. Thanks to Mattia Rizzolo for the
     report. (Closes: #791910)
+  * Vcs-Browser field: Switch to cgit.
 
  -- Markus Koschany <apo@gambaru.de>  Thu, 09 Jul 2015 16:39:44 +0200
 
