@@ -1,8 +1,10 @@
-byzanz (0.3.0+git20151213-1) UNRELEASED; urgency=medium
+byzanz (0.3.0+git20151213-1) unstable; urgency=medium
 
-  * Non-maintainer upload.
+  * Imported Upstream version 0.3.0+git20151213.
+  * Update my e-mail address.
+  * Vcs-Browser: Use https.
 
- -- Markus Koschany <apo@debian.org>  Sun, 20 Dec 2015 22:23:31 +0100
+ -- Markus Koschany <apo@debian.org>  Sun, 20 Dec 2015 22:26:50 +0100
 
 byzanz (0.3.0+git20150701-1) unstable; urgency=medium
 
