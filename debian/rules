@@ -4,7 +4,7 @@ DPATH  := $(abspath $(dir $(MAKEFILE_LIST)))
 VER    ?= $(shell dpkg-parsechangelog -l$(DPATH)/changelog | perl -ne 'print $$1 if m{Version:\s*(\d[\d\.]*(?:\+(?:git)?\d+))}')
 PKG    := byzanz
 UURL   := git://git.gnome.org/byzanz
-COMMIT := 78fb3de32a48e5cb85f5c024fa1ee960677aecc8
+COMMIT := 17375b7b4f0356c2dcaed38719e2738490f2e2aa
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
