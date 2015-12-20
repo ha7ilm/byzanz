@@ -2,6 +2,7 @@ From: Markus Koschany <apo@debian.org>
 Date: Tue, 4 Feb 2014 03:06:45 +0100
 Subject: audio
 
+Forwarded: https://bugzilla.gnome.org/show_bug.cgi?id=708527
 ---
  src/byzanzencoderflv.c | 6 +++---
  src/byzanzencoderogv.c | 6 +++---
