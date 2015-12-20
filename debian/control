@@ -15,7 +15,7 @@ Build-Depends:
 Standards-Version: 3.9.6
 Homepage: http://git.gnome.org/browse/byzanz/
 Vcs-Git: git://anonscm.debian.org/collab-maint/byzanz.git
-Vcs-Browser: http://anonscm.debian.org/cgit/collab-maint/byzanz.git
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/byzanz.git
 
 Package: byzanz
 Architecture: any
