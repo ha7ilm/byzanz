@@ -1,3 +1,9 @@
+byzanz (0.3.0+git20160107-1) UNRELEASED; urgency=medium
+
+  * New upstream snapshot.
+
+ -- Markus Koschany <apo@debian.org>  Wed, 27 Jan 2016 21:16:45 +0100
+
 byzanz (0.3.0+git20151213-1) unstable; urgency=medium
 
   * Imported Upstream version 0.3.0+git20151213.
