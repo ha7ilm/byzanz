@@ -1,8 +1,9 @@
-byzanz (0.3.0+git20160107-1) UNRELEASED; urgency=medium
+byzanz (0.3.0+git20160107-1) unstable; urgency=medium
 
-  * New upstream snapshot.
+  * Imported Upstream version 0.3.0+git20160107.
+  * Vcs-Git: Use https.
 
- -- Markus Koschany <apo@debian.org>  Wed, 27 Jan 2016 21:16:45 +0100
+ -- Markus Koschany <apo@debian.org>  Wed, 27 Jan 2016 21:20:10 +0100
 
 byzanz (0.3.0+git20151213-1) unstable; urgency=medium
 
