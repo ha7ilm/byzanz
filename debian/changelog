@@ -1,3 +1,11 @@
+byzanz (0.3.0+git20160312-1) unstable; urgency=medium
+
+  * New upstream version 0.3.0+git20160312.
+  * Switch to compat level 10.
+  * Declare compliance with Debian Policy 3.9.8.
+
+ -- Markus Koschany <apo@debian.org>  Wed, 07 Dec 2016 11:14:03 +0100
+
 byzanz (0.3.0+git20160107-1) unstable; urgency=medium
 
   * Imported Upstream version 0.3.0+git20160107.
