@@ -1,3 +1,14 @@
+byzanz (0.3.0+git20160312-2) unstable; urgency=medium
+
+  * Declare compliance with Debian Policy 4.1.2.
+  * d/copyright: Use https for Format field.
+  * Remove dh-autoreconf from Build-Depends because it is automatically added
+    with compat level 10.
+  * Remove source/local-options file.
+  * Add remove-deprecated-gnome-common-macros.patch. (Closes: #830011)
+
+ -- Markus Koschany <apo@debian.org>  Mon, 04 Dec 2017 01:53:13 +0100
+
 byzanz (0.3.0+git20160312-1) unstable; urgency=medium
 
   * New upstream version 0.3.0+git20160312.
