@@ -4,7 +4,6 @@ Priority: optional
 Maintainer: Markus Koschany <apo@debian.org>
 Build-Depends:
  debhelper (>= 10),
- dh-autoreconf,
  gnome-common,
  libcairo2-dev,
  libglib2.0-dev,
