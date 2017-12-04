@@ -1,3 +1,4 @@
 Fix-FTBFS-because-of-Wcast-align-error-flag.patch
 audio.patch
 no-Werror.patch
+remove-deprecated-gnome-common-macros.patch
