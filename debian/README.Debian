@@ -23,5 +23,3 @@ EXAMPLES
 # Theora
 
     byzanz-record -a -c -d 30 -x 840 -y 0 -w 840 -h 525 mydesktop.ogv
-
- -- Markus Koschany <apo@gambaru.de>  Mon, 03 Feb 2014 23:55:21 +0100

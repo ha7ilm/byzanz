@@ -1,7 +1,0 @@
-byzanz for Debian
------------------
-
-The upstream sources are maintained in a git repository. Please use
-debian/rules get-orig-source to retrieve them.
-
- -- Markus Koschany <apo@gambaru.de>  Thu, 09 May 2013 17:40:09 +0200
