@@ -3,7 +3,7 @@ Section: graphics
 Priority: optional
 Maintainer: Markus Koschany <apo@debian.org>
 Build-Depends:
- debhelper (>= 10),
+ debhelper (>= 11),
  gnome-common,
  libcairo2-dev,
  libglib2.0-dev,
