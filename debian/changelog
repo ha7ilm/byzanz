@@ -1,3 +1,14 @@
+byzanz (0.3.0+git20160312-3) unstable; urgency=medium
+
+  * Switch to compat level 11.
+  * Declare compliance with Debian Policy 4.2.0.
+  * Move the package to salsa.debian.org.
+  * Drop README.source because the project is now officially dead. Clarify the
+    situation in debian/watch.
+  * Remove get-orig-source target. Update Source field in debian/copyright.
+
+ -- Markus Koschany <apo@debian.org>  Wed, 15 Aug 2018 22:34:16 +0200
+
 byzanz (0.3.0+git20160312-2) unstable; urgency=medium
 
   * Declare compliance with Debian Policy 4.1.2.
