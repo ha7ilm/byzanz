@@ -12,7 +12,7 @@ Build-Depends:
  libgtk-3-dev,
  libx11-dev
 Standards-Version: 4.2.0
-Homepage: http://git.gnome.org/browse/byzanz/
+Homepage:  https://gitlab.gnome.org/Archive/byzanz
 Vcs-Git: https://salsa.debian.org/debian/byzanz.git
 Vcs-Browser: https://salsa.debian.org/debian/byzanz
 
