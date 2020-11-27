@@ -1,3 +1,11 @@
+byzanz (0.3.0+git20160312-4) unstable; urgency=medium
+
+  * Switch to debhelper-compat = 13.
+  * Declare compliance with Debian Policy 4.5.1.
+  * Do not export -Wl,--as-needed because Debian 11 supports it by default.
+
+ -- Markus Koschany <apo@debian.org>  Fri, 27 Nov 2020 02:06:47 +0100
+
 byzanz (0.3.0+git20160312-3) unstable; urgency=medium
 
   * Switch to compat level 11.
