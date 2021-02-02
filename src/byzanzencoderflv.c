@@ -34,14 +34,14 @@ byzanz_encoder_flv_class_init (ByzanzEncoderFlvClass *klass)
   encoder_class->filter = gtk_file_filter_new ();
   g_object_ref_sink (encoder_class->filter);
   gtk_file_filter_set_name (encoder_class->filter, _("Flash video"));
-  gtk_file_filter_add_mime_type (encoder_class->filter, "video/x-flv");
-  gtk_file_filter_add_pattern (encoder_class->filter, "*.flv");
+  gtk_file_filter_add_mime_type (encoder_class->filter, "video/x-raw");
+  gtk_file_filter_add_pattern (encoder_class->filter, "*.avi");
 
   gstreamer_class->pipeline_string = 
-    "appsrc name=src ! videoconvert ! avenc_flashsv buffer-size=8388608 ! flvmux ! giostreamsink name=sink";
-  gstreamer_class->audio_pipeline_string = 
-    "autoaudiosrc name=audiosrc ! audioconvert ! audio/x-raw-int,width=16 ! queue ! flvmux name=muxer ! giostreamsink name=sink "
-    "appsrc name=src ! videoconvert ! avenc_flashsv buffer-size=8388608 ! muxer.";
+    "appsrc name=src ! videorate ! video/x-raw,framerate=25/1 ! avimux ! giostreamsink name=sink";
+  gstreamer_class->audio_pipeline_string = "";
+    //"autoaudiosrc name=audiosrc ! audioconvert ! audio/x-raw-int,width=16 ! queue ! avimux name=muxer ! giostreamsink name=sink "
+    //"appsrc name=src ! videoconvert ! video/x-raw,format=(string)I420 ! muxer.";
 }
 
 static void
